@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Backend\AdminController;
+use App\Http\Controllers\Backend\vendorController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -28,4 +30,7 @@ Route::middleware('auth')->group(function () {
     Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
-require __DIR__.'/auth.php';
+require __DIR__ . '/auth.php';
+
+Route::get('admin/dashboard', [AdminController::class, 'dashboard'])->middleware('auth')->name('admin.dashboard');
+Route::get('vendor/dashboard', [vendorController::class, 'dashboard'])->middleware('auth')->name('vendor.dashboard');
