@@ -21,36 +21,35 @@
                     <span>Manage Categories</span></a>
                 <ul class="dropdown-menu">
                     <li class=" "><a class="nav-link"
-                            href=" ">Category</a></li>
+                                     href=" ">Category</a></li>
                     <li class=" "><a class="nav-link"
-                            href=" ">Sub Category</a></li>
-                    <li class=" "> <a class="nav-link"
-                            href=" ">Child Category</a></li>
+                                     href=" ">Sub Category</a></li>
+                    <li class=" "><a class="nav-link"
+                                     href=" ">Child Category</a></li>
 
                 </ul>
             </li>
 
             <li
-            class="dropdown">
-            <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-box"></i>
-                <span>Manage Products</span></a>
-            <ul class="dropdown-menu">
-                <li class=""><a class="nav-link"
-                        href="">Brands</a></li>
-                <li
-                    class="">
-                    <a class="nav-link" href="">Products</a></li>
-                <li class=""><a class="nav-link"
-                        href="">Seller Products</a></li>
-                <li class=""><a class="nav-link"
-                        href="">Seller Pending Products</a></li>
+                class="dropdown">
+                <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-box"></i>
+                    <span>Manage Products</span></a>
+                <ul class="dropdown-menu">
+                    <li class=""><a class="nav-link"
+                                    href="">Brands</a></li>
+                    <li
+                        class="">
+                        <a class="nav-link" href="">Products</a></li>
+                    <li class=""><a class="nav-link"
+                                    href="">Seller Products</a></li>
+                    <li class=""><a class="nav-link"
+                                    href="">Seller Pending Products</a></li>
 
-                <li class=""><a class="nav-link"
-                        href="">Product Reviews</a></li>
+                    <li class=""><a class="nav-link"
+                                    href="">Product Reviews</a></li>
 
-            </ul>
-        </li>
-
+                </ul>
+            </li>
 
 
             <li
@@ -59,32 +58,32 @@
                     <span>Orders</span></a>
                 <ul class="dropdown-menu">
                     <li class=""><a class="nav-link"
-                            href="">All Orders</a></li>
+                                    href="">All Orders</a></li>
                     <li class=""><a class="nav-link"
-                            href="">All Pending Orders</a></li>
+                                    href="">All Pending Orders</a></li>
                     <li class=""><a class="nav-link"
-                            href="">All processed Orders</a></li>
+                                    href="">All processed Orders</a></li>
                     <li class=""><a class="nav-link"
-                            href="">All Dropped Off Orders</a></li>
+                                    href="">All Dropped Off Orders</a></li>
 
                     <li class=""><a class="nav-link"
-                            href="">All Shipped Orders</a></li>
+                                    href="">All Shipped Orders</a></li>
                     <li class=""><a class="nav-link"
-                            href="">All Out For Delivery Orders</a></li>
+                                    href="">All Out For Delivery Orders</a></li>
 
 
                     <li class=""><a class="nav-link"
-                            href="">All Delivered Orders</a></li>
+                                    href="">All Delivered Orders</a></li>
 
                     <li class=""><a class="nav-link"
-                            href="">All Canceled Orders</a></li>
+                                    href="">All Canceled Orders</a></li>
 
                 </ul>
             </li>
 
             <li class=""><a class="nav-link"
-                href=""><i class="fas fa-money-bill-alt"></i> <span>Transactions</span></a>
-        </li>
+                            href=""><i class="fas fa-money-bill-alt"></i> <span>Transactions</span></a>
+            </li>
 
             <li
                 class="dropdown">
@@ -92,15 +91,15 @@
                     <span>Ecommerce</span></a>
                 <ul class="dropdown-menu">
                     <li class=""><a class="nav-link"
-                            href="">Flash Sale</a></li>
+                                    href="">Flash Sale</a></li>
                     <li class=""><a class="nav-link"
-                            href="">Coupons</a></li>
+                                    href="">Coupons</a></li>
                     <li class=""><a class="nav-link"
-                            href="">Shipping Rule</a></li>
+                                    href="">Shipping Rule</a></li>
                     <li class=""><a class="nav-link"
-                            href="">Vendor Profile</a></li>
+                                    href="">Vendor Profile</a></li>
                     <li class=""><a class="nav-link"
-                            href="">Payment Settings</a></li>
+                                    href="">Payment Settings</a></li>
 
                 </ul>
             </li>
@@ -110,24 +109,24 @@
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-cog"></i> <span>Manage Website</span></a>
                 <ul class="dropdown-menu">
                     <li class=""><a class="nav-link"
-                            href="">Slider</a></li>
+                                    href="">Slider</a></li>
 
                     <li class=""><a class="nav-link"
-                            href="">Home Page Setting</a></li>
+                                    href="">Home Page Setting</a></li>
 
                     <li class=""><a class="nav-link"
-                            href="">Vendor Condition</a></li>
+                                    href="">Vendor Condition</a></li>
                     <li class=""><a class="nav-link"
-                            href="">About page</a></li>
+                                    href="">About page</a></li>
                     <li class=""><a class="nav-link"
-                            href="">Terms Page</a></li>
+                                    href="">Terms Page</a></li>
 
                 </ul>
             </li>
 
             <li><a class="nav-link "
-                href=""><i class="fas fa-ad"></i>
-                <span>Advertisement</span></a></li>
+                   href=""><i class="fas fa-ad"></i>
+                    <span>Advertisement</span></a></li>
 
             <li
                 class="dropdown ">
@@ -135,11 +134,11 @@
                 <ul class="dropdown-menu">
 
                     <li class=""><a class="nav-link"
-                            href="">Categories</a></li>
+                                    href="">Categories</a></li>
                     <li class=""><a class="nav-link"
-                            href="">Blogs</a></li>
+                                    href="">Blogs</a></li>
                     <li class=""><a class="nav-link"
-                            href="">Blog Comments</a></li>
+                                    href="">Blog Comments</a></li>
                 </ul>
             </li>
 
@@ -151,16 +150,16 @@
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-th-large"></i><span>Footer</span></a>
                 <ul class="dropdown-menu">
                     <li class=""><a class="nav-link"
-                            href="">Footer Info</a></li>
+                                    href="">Footer Info</a></li>
 
                     <li class=""><a class="nav-link"
-                            href="">Footer Socials</a></li>
+                                    href="">Footer Socials</a></li>
 
                     <li class=""><a class="nav-link"
-                            href="">Footer Grid Two</a></li>
+                                    href="">Footer Grid Two</a></li>
 
                     <li class=""><a class="nav-link"
-                            href="">Footer Grid Three</a></li>
+                                    href="">Footer Grid Three</a></li>
 
                 </ul>
             </li>
@@ -169,25 +168,25 @@
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-users"></i> <span>Users</span></a>
                 <ul class="dropdown-menu">
                     <li class=""><a class="nav-link"
-                            href="">Customer list</a></li>
+                                    href="">Customer list</a></li>
                     <li class=""><a class="nav-link"
-                            href="">Vendor list</a></li>
+                                    href="">Vendor list</a></li>
 
                     <li class=""><a class="nav-link"
-                            href="">Pending vendors</a></li>
+                                    href="">Pending vendors</a></li>
 
                     <li class=""><a class="nav-link"
-                            href="">Admin Lists</a></li>
+                                    href="">Admin Lists</a></li>
 
                     <li class=""><a class="nav-link"
-                            href="">Manage user</a></li>
+                                    href="">Manage user</a></li>
 
                 </ul>
             </li>
 
 
             <li><a class=""
-                    href=""><i class="fas fa-user"></i>
+                   href=""><i class="fas fa-user"></i>
                     <span>Subscribers</span></a></li>
 
             <li><a class="nav-link" href=""><i class="fas fa-wrench"></i>

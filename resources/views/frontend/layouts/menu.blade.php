@@ -134,7 +134,7 @@
             <div class="wsus__mobile_menu_main_menu">
                 <div class="accordion accordion-flush" id="accordionFlushExample2">
                     <ul>
-                        <li><a href="{{route('home')}}">home</a></li>
+                        <li><a href=" ">home</a></li>
 
                         <li><a href=" ">vendor</a></li>
 
