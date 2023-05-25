@@ -1,6 +1,6 @@
 @extends('frontend.layouts.master')
 @section('title')
-{{$settings->site_name}} || e-Commerce HTML Template
+    e-Commerce HTML Template
 @endsection
 
 @section('content')
@@ -17,7 +17,7 @@
     <!--============================
         FLASH SELL START
     ==============================-->
-    @include('frontend.home.sections.flash-sale')
+{{--    @include('frontend.home.sections.flash-sale')--}}
     <!--============================
         FLASH SELL END
     ==============================-->

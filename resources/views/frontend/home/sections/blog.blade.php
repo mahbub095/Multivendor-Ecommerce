@@ -9,7 +9,7 @@
             </div>
         </div>
         <div class="row home_blog_slider">
-         
+
             <div class="col-xl-3">
                 <div class="wsus__single_blog wsus__single_blog_2">
                     <a class="wsus__blog_img" href=" ">
@@ -18,13 +18,13 @@
                     <div class="wsus__blog_text">
                         <a class="blog_top red" href="#"> </a>
                         <div class="wsus__blog_text_center">
-                            <a href=" "></a> 
-                            <p class="date"> </p>
+                            <a href=" "></a>
+                            <p class="date"></p>
                         </div>
                     </div>
                 </div>
             </div>
-            
+
 
         </div>
     </div>
