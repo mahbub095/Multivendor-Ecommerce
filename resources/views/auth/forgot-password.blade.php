@@ -1,9 +1,6 @@
 @extends('frontend.layouts.master')
-
 @section('title')
-    Forgot Password
 @endsection
-
 @section('content')
 
     <!--============================
@@ -27,8 +24,6 @@
     <!--============================
         BREADCRUMB END
     ==============================-->
-
-
     <!--============================
         FORGET PASSWORD START
     ==============================-->
@@ -43,6 +38,7 @@
                         <div class="wsus__login">
                             <form method="POST" action="{{ route('password.email') }}">
                                 @csrf
+
                                 <div class="wsus__login_input">
                                     <i class="fal fa-envelope"></i>
                                     <input id="email" type="email" name="email" value="{{old('email')}}"

@@ -1,9 +1,6 @@
 @extends('frontend.layouts.master')
-
 @section('title')
-    Login
 @endsection
-
 @section('content')
 
     <!--============================
@@ -27,7 +24,6 @@
     <!--============================
         BREADCRUMB END
     ==============================-->
-
 
     <!--============================
        LOGIN/REGISTER PAGE START
@@ -69,7 +65,6 @@
                                             <input id="password" type="password" name="password" placeholder="Password">
                                         </div>
 
-
                                         <div class="wsus__login_save">
                                             <div class="form-check form-switch">
                                                 <input id="remember_me" name="remember" class="form-check-input"
@@ -93,17 +88,20 @@
                                     </form>
                                 </div>
                             </div>
+
+                            {{--Registration form--}}
+
                             <div class="tab-pane fade" id="pills-profiles" role="tabpanel"
                                  aria-labelledby="pills-profile-tab2">
                                 <div class="wsus__login">
                                     <form method="POST" action="{{ route('register') }}">
                                         @csrf
+
                                         <div class="wsus__login_input">
                                             <i class="fas fa-user-tie"></i>
                                             <input id="name" name="name" value="{{old('name')}}" type="text"
                                                    placeholder="Name">
                                         </div>
-
 
                                         <div class="wsus__login_input">
                                             <i class="far fa-envelope"></i>
@@ -111,12 +109,10 @@
                                                    type="text" placeholder="Email">
                                         </div>
 
-
                                         <div class="wsus__login_input">
                                             <i class="fas fa-key"></i>
                                             <input id="password" name="password" type="password" placeholder="Password">
                                         </div>
-
 
                                         <div class="wsus__login_input">
                                             <i class="fas fa-key"></i>

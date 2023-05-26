@@ -1,9 +1,6 @@
 @extends('frontend.dashboard.layouts.master')
-
 @section('title')
-Dahsboard
 @endsection
-
 @section('content')
 <section id="wsus__dashboard">
 
@@ -16,6 +13,7 @@ Dahsboard
                 <div class="dashboard_content">
                     <div class="wsus__dashboard">
                         <div class="row">
+
                             <div class="col-xl-2 col-6 col-md-4">
                                 <a class="wsus__dashboard_item red" href=" ">
                                     <i class="fas fa-cart-plus"></i>
@@ -23,6 +21,7 @@ Dahsboard
                                     <h4 style="color:#ffff"> </h4>
                                 </a>
                             </div>
+
                             <div class="col-xl-2 col-6 col-md-4">
                                 <a class="wsus__dashboard_item green" href="dsahboard_download.html">
                                     <i class="fas fa-cart-plus"></i>
@@ -30,6 +29,7 @@ Dahsboard
                                     <h4 style="color:#ffff"> </h4>
                                 </a>
                             </div>
+
                             <div class="col-xl-2 col-6 col-md-4">
                                 <a class="wsus__dashboard_item sky" href="dsahboard_review.html">
                                     <i class="fas fa-cart-plus"></i>
@@ -37,6 +37,7 @@ Dahsboard
                                     <h4 style="color:#ffff"> </h4>
                                 </a>
                             </div>
+
                             <div class="col-xl-2 col-6 col-md-4">
                                 <a class="wsus__dashboard_item blue" href=" ">
                                     <i class="fas fa-star"></i>

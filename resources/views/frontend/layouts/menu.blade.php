@@ -69,18 +69,11 @@
     <ul class="wsus__mobile_menu_header_icon d-inline-flex">
 
         <li><a href=" "><i class="fal fa-heart"></i><span id="wishlist_count">
-
         </span></a></li>
-
-
         <li><a href=" "><i class="fal fa-user"></i></a></li>
-
         <li><a href=" "><i class="fal fa-user"></i></a></li>
-
         <li><a href=" "><i class="fal fa-user"></i></a></li>
-
         <li><a href="{{route('login')}}"><i class="fal fa-user"></i></a></li>
-
 
     </ul>
     <form action=" ">
@@ -111,7 +104,6 @@
                                data-bs-target="#flush-collapseThreew " aria-expanded="false"
                                aria-controls="flush-collapseThreew"><i class=""></i> </a>
 
-
                             <div id="flush-collapseThreew" class="accordion-collapse collapse"
                                  data-bs-parent="#accordionFlushExample">
                                 <div class="accordion-body">
@@ -122,10 +114,7 @@
                                     </ul>
                                 </div>
                             </div>
-
                         </li>
-
-
                     </ul>
                 </div>
             </div>
@@ -135,14 +124,10 @@
                 <div class="accordion accordion-flush" id="accordionFlushExample2">
                     <ul>
                         <li><a href=" ">home</a></li>
-
                         <li><a href=" ">vendor</a></li>
-
                         <li><a href=" ">blog</a></li>
                         <li><a href=" ">about us</a></li>
                         <li><a href=" ">contact</a></li>
-
-
                         <li><a href=" ">track order</a></li>
                         <li><a href=" ">flash sale</a></li>
                     </ul>

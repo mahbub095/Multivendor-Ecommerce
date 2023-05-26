@@ -1,6 +1,6 @@
 <?php
 
-use App\Http\Controllers\Backend\vendorController;
+use App\Http\Controllers\Backend\VendorController;
 use Illuminate\Support\Facades\Route;
 
 //Vendor Route
