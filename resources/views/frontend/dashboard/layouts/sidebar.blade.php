@@ -10,7 +10,7 @@
         <li><a class=" " href=" "><i class="fas fa-tachometer"></i>Go to Vendor Dashboard</a></li>
         <li><a class=" " href=" "><i class="fas fa-list-ul"></i> Orders</a></li>
         <li><a class=" " href=" "><i class="far fa-star"></i> Reviews</a></li>
-        <li><a class=" " href=" "><i class="far fa-user"></i> My Profile</a></li>
+        <li><a class=" " href="{{route('user.profile')}}"><i class="far fa-user"></i> My Profile</a></li>
         <li><a class=" " href=" "><i class="fal fa-gift-card"></i> Addresses</a></li>
         <li><a class=" " href=" "><i class="far fa-user"></i> Request to be vendor</a></li>
         <li>

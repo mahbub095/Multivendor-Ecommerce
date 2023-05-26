@@ -144,7 +144,6 @@
 
             <li class="menu-header">Settings & More</li>
 
-
             <li
                 class="dropdown ">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-th-large"></i><span>Footer</span></a>
@@ -160,7 +159,6 @@
 
                     <li class=""><a class="nav-link"
                                     href="">Footer Grid Three</a></li>
-
                 </ul>
             </li>
             <li
@@ -184,7 +182,6 @@
                 </ul>
             </li>
 
-
             <li><a class=""
                    href=""><i class="fas fa-user"></i>
                     <span>Subscribers</span></a></li>
@@ -193,6 +190,5 @@
                     <span>Settings</span></a></li>
 
         </ul>
-
     </aside>
 </div>
