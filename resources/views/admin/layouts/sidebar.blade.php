@@ -71,7 +71,6 @@
                     <li class=""><a class="nav-link"
                                     href="">All Out For Delivery Orders</a></li>
 
-
                     <li class=""><a class="nav-link"
                                     href="">All Delivered Orders</a></li>
 
@@ -109,7 +108,7 @@
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-cog"></i> <span>Manage Website</span></a>
                 <ul class="dropdown-menu">
                     <li class=""><a class="nav-link"
-                                    href="">Slider</a></li>
+                                    href="{{ route('admin.slider.index') }}">Slider</a></li>
 
                     <li class=""><a class="nav-link"
                                     href="">Home Page Setting</a></li>
