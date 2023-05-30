@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\UserProfileController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Backend\AdminController;
@@ -17,9 +18,10 @@ use App\Http\Controllers\Frontend\UserDashboardController;
 |
 */
 
-Route::get('/', function () {
-    return view('frontend.home.home');
-});
+Route::get('/', [HomeController::class, 'index'])->name('home');
+
+
+
 
 Route::middleware('auth')->group(function () {
     Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');

@@ -1,3 +1,14 @@
+@php
+    $categories = \App\Models\Category::where('status', 1)
+    ->with(['subCategories' => function($query){
+        $query->where('status', 1)
+        ->with(['childCategories' => function($query){
+            $query->where('status', 1);
+        }]);
+    }])
+    ->get();
+@endphp
+
 <nav class="wsus__main_menu d-none d-lg-block">
     <div class="container">
         <div class="row">
@@ -9,25 +20,26 @@
                     <ul class="wsus_menu_cat_item show_home toggle_menu">
                         {{-- <li><a href="#"><i class="fas fa-star"></i> hot promotions</a></li> --}}
 
-
-                        <li><a class="" href=""><i class=""></i> </a>
-
-                            <ul class="wsus_menu_cat_droapdown">
-
-                                <li><a href=" "> <i class=" "></i></a>
-
-                                    <ul class="wsus__sub_category">
-
-                                        <li><a href=" "> </a></li>
+                        @foreach ($categories as $category)
+                            <li><a class="{{count($category->subCategories) > 0 ? 'wsus__droap_arrow' : ''}}" href=" "><i class="{{$category->icon}}"></i> {{$category->name}} </a>
+                                @if(count($category->subCategories) > 0)
+                                    <ul class="wsus_menu_cat_droapdown">
+                                        @foreach ($category->subCategories as $subCategory)
+                                            <li> {{$subCategory->name}} <i class="{{count($subCategory->childCategories) > 0 ? 'fas fa-angle-right' : ''}}"></i>
+                                                @if(count($subCategory->childCategories) > 0)
+                                                    <ul class="wsus__sub_category">
+                                                        @foreach ($subCategory->childCategories as $childCategory)
+                                                            <li> {{$childCategory->name}}  </li>
+                                                        @endforeach
+                                                    </ul>
+                                                @endif
+                                            </li>
+                                        @endforeach
 
                                     </ul>
-
-                                </li>
-
-
-                            </ul>
-
-                        </li>
+                                @endif
+                            </li>
+                        @endforeach
 
 
                         {{-- <li><a href="#"><i class="fal fa-gem"></i> View All Categories</a></li> --}}
