@@ -25,7 +25,7 @@
                     <li class=" "><a class="nav-link"
                                      href=" {{ route('admin.sub-category.index') }}">Sub Category</a></li>
                     <li class=" "><a class="nav-link"
-                                     href=" ">Child Category</a></li>
+                                     href=" {{ route('admin.child-category.index') }}">Child Category</a></li>
 
                 </ul>
             </li>
