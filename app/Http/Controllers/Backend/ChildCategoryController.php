@@ -28,7 +28,8 @@ class ChildCategoryController extends Controller
     public function create()
     {
         $categories = Category::all();
-        return view('admin.child-category.create', compact('categories'));
+        $subcategories = SubCategory::all();
+        return view('admin.child-category.create', compact('categories','subcategories'));
     }
 
     /**
