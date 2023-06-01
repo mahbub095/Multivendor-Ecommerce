@@ -9,7 +9,8 @@
         <ul class="sidebar-menu">
             <li class="menu-header">Dashboard</li>
             <li class="dropdown active">
-                <a href="{{ route('admin.dashbaord') }}" class="nav-link"><i class="fas fa-fire"></i><span>Dashboard</span></a>
+                <a href="{{ route('admin.dashbaord') }}" class="nav-link"><i
+                        class="fas fa-fire"></i><span>Dashboard</span></a>
 
             </li>
             <li class="menu-header">Ecommerce</li>
@@ -22,9 +23,15 @@
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-list"></i>
                     <span>Manage Categories</span></a>
                 <ul class="dropdown-menu">
-                    <li class="{{ setActive(['admin.category.*']) }}"><a class="nav-link" href="{{ route('admin.category.index') }}">Category</a></li>
-                    <li class="{{ setActive(['admin.sub-category.*']) }}"><a class="nav-link" href="{{ route('admin.sub-category.index') }}">Sub Category</a></li>
-                    <li class="{{ setActive(['admin.child-category.*']) }}"> <a class="nav-link" href="{{ route('admin.child-category.index') }}">Child Category</a></li>
+                    <li class="{{ setActive(['admin.category.*']) }}"><a class="nav-link"
+                                                                         href="{{ route('admin.category.index') }}">Category</a>
+                    </li>
+                    <li class="{{ setActive(['admin.sub-category.*']) }}"><a class="nav-link"
+                                                                             href="{{ route('admin.sub-category.index') }}">Sub
+                            Category</a></li>
+                    <li class="{{ setActive(['admin.child-category.*']) }}"><a class="nav-link"
+                                                                               href="{{ route('admin.child-category.index') }}">Child
+                            Category</a></li>
 
                 </ul>
             </li>
@@ -33,7 +40,9 @@
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-box"></i>
                     <span>Manage Products</span></a>
                 <ul class="dropdown-menu">
-                    <li class=""><a class="nav-link" href="">Brands</a></li>
+                    <li class="{{ setActive(['admin.brand.*']) }}"><a class="nav-link"
+                                                                      href="{{ route('admin.brand.index') }}">Brands</a>
+                    </li>
                     <li class="">
                         <a class="nav-link" href="">Products</a>
                     </li>
@@ -75,7 +84,8 @@
                     <li class=""><a class="nav-link" href="">Flash Sale</a></li>
                     <li class=""><a class="nav-link" href="">Coupons</a></li>
                     <li class=""><a class="nav-link" href="">Shipping Rule</a></li>
-                    <li class=""><a class="nav-link" href="">Vendor Profile</a></li>
+                    <li class=""><a class="nav-link" href="{{ route('admin.vendor-profile.index') }}">Vendor Profile</a>
+                    </li>
                     <li class=""><a class="nav-link" href="">Payment Settings</a></li>
 
                 </ul>
