@@ -44,7 +44,7 @@
                                                                       href="{{ route('admin.brand.index') }}">Brands</a>
                     </li>
                     <li class="">
-                        <a class="nav-link" href="">Products</a>
+                        <a class="nav-link" href="{{ route('admin.products.index') }}">Products</a>
                     </li>
                     <li class=""><a class="nav-link" href="">Seller Products</a></li>
                     <li class=""><a class="nav-link" href="">Seller Pending Products</a></li>
