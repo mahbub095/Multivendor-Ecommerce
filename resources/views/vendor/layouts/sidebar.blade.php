@@ -18,7 +18,7 @@
 
         <li><a class="" href=""><i
                     class="far fa-user"></i> Shop Profile</a></li>
-        <li><a class="" href=""><i class="far fa-user"></i>
+        <li><a class="" href="{{route('vendor.profile')}}"><i class="far fa-user"></i>
                 My Profile</a></li>
         <li>
 
