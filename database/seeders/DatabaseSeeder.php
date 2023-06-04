@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Http\Controllers\Backend\VendorShopProfileController;
 use Illuminate\Database\Seeder;
 
 class DatabaseSeeder extends Seeder
@@ -20,6 +21,7 @@ class DatabaseSeeder extends Seeder
         // ]);
 
 //   $this->call(UserSeeder::class);
-   $this->call(AdminProfileSeeder::class);
+//   $this->call(AdminProfileSeeder::class);
+   $this->call(VendorShopProfileSeeder::class);
     }
 }

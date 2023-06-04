@@ -16,7 +16,7 @@
         <li><a class="" href=""><i
                     class="fas fa-star"></i> Review</a></li>
 
-        <li><a class="" href=""><i
+        <li><a class="" href="{{route('vendor.shop-profile.index')}}"><i
                     class="far fa-user"></i> Shop Profile</a></li>
         <li><a class="" href="{{route('vendor.profile')}}"><i class="far fa-user"></i>
                 My Profile</a></li>
