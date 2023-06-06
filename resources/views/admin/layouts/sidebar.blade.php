@@ -46,8 +46,9 @@
                     <li class="">
                         <a class="nav-link" href="{{ route('admin.products.index') }}">Products</a>
                     </li>
-                    <li class=""><a class="nav-link" href="">Seller Products</a></li>
-                    <li class=""><a class="nav-link" href="">Seller Pending Products</a></li>
+                    <li class=""><a class="nav-link" href="{{ route('admin.seller-products.index') }}">Seller
+                            Products</a></li>
+                    <li class=""><a class="nav-link" href="{{ route('admin.seller-pending-products.index') }}">Seller Pending Products</a></li>
 
                     <li class=""><a class="nav-link" href="">Product Reviews</a></li>
 
