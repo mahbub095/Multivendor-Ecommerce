@@ -19,6 +19,7 @@ use Str;
 class VendorProductController extends Controller
 {
     use ImageUploadTrait;
+
     /**
      * Display a listing of the resource.
      */
@@ -51,8 +52,8 @@ class VendorProductController extends Controller
             'qty' => ['required'],
             'short_description' => ['required', 'max: 600'],
             'long_description' => ['required'],
-            'seo_title' => ['nullable','max:200'],
-            'seo_description' => ['nullable','max:250'],
+            'seo_title' => ['nullable', 'max:200'],
+            'seo_description' => ['nullable', 'max:250'],
             'status' => ['required']
         ]);
 
@@ -106,7 +107,7 @@ class VendorProductController extends Controller
         $product = Product::findOrFail($id);
 
         /** Check if it's the owner of the product */
-        if($product->vendor_id != Auth::user()->vendor->id){
+        if ($product->vendor_id != Auth::user()->vendor->id) {
             abort(404);
         }
 
@@ -116,13 +117,13 @@ class VendorProductController extends Controller
         $brands = Brand::all();
 
         return view('vendor.product.edit',
-        compact(
-            'product',
-            'subCategories',
-            'childCategories',
-            'categories',
-            'brands'
-        ));
+            compact(
+                'product',
+                'subCategories',
+                'childCategories',
+                'categories',
+                'brands'
+            ));
     }
 
     /**
@@ -140,14 +141,14 @@ class VendorProductController extends Controller
             'qty' => ['required'],
             'short_description' => ['required', 'max: 600'],
             'long_description' => ['required'],
-            'seo_title' => ['nullable','max:200'],
-            'seo_description' => ['nullable','max:250'],
+            'seo_title' => ['nullable', 'max:200'],
+            'seo_description' => ['nullable', 'max:250'],
             'status' => ['required']
         ]);
 
         $product = Product::findOrFail($id);
 
-        if($product->vendor_id != Auth::user()->vendor->id){
+        if ($product->vendor_id != Auth::user()->vendor->id) {
             abort(404);
         }
 
@@ -190,7 +191,7 @@ class VendorProductController extends Controller
     public function destroy(string $id)
     {
         $product = Product::findOrFail($id);
-        if($product->vendor_id != Auth::user()->vendor->id){
+        if ($product->vendor_id != Auth::user()->vendor->id) {
             abort(404);
         }
 
@@ -199,7 +200,7 @@ class VendorProductController extends Controller
 
         /** Delete product gallery images */
         $galleryImages = ProductImageGallery::where('product_id', $product->id)->get();
-        foreach($galleryImages as $image){
+        foreach ($galleryImages as $image) {
             $this->deleteImage($image->image);
             $image->delete();
         }
@@ -207,7 +208,7 @@ class VendorProductController extends Controller
         /** Delete product variants if exist */
         $variants = ProductVariant::where('product_id', $product->id)->get();
 
-        foreach($variants as $variant){
+        foreach ($variants as $variant) {
             $variant->productVariantItems()->delete();
             $variant->delete();
         }
@@ -230,17 +231,17 @@ class VendorProductController extends Controller
      * Get all product sub categores
      */
 
-     public function getSubCategories(Request $request)
-     {
-         $subCategories = SubCategory::where('category_id', $request->id)->get();
+    public function getSubCategories(Request $request)
+    {
+        $subCategories = SubCategory::where('category_id', $request->id)->get();
 
-         return $subCategories;
-     }
+        return $subCategories;
+    }
 
-     public function getChildCategories(Request $request)
-     {
-         $childCategories = ChildCategory::where('sub_category_id', $request->id)->get();
+    public function getChildCategories(Request $request)
+    {
+        $childCategories = ChildCategory::where('sub_category_id', $request->id)->get();
 
-         return $childCategories;
-     }
+        return $childCategories;
+    }
 }

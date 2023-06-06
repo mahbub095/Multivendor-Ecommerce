@@ -21,7 +21,7 @@ class VendorProductVariantController extends Controller
         $product = Product::findOrFail($request->product);
 
         /** Check product vendor */
-        if($product->vendor_id !== Auth::user()->vendor->id){
+        if ($product->vendor_id !== Auth::user()->vendor->id) {
             abort(404);
         }
 
@@ -73,7 +73,7 @@ class VendorProductVariantController extends Controller
     {
         $variant = ProductVariant::findOrFail($id);
         /** Check product vendor */
-        if($variant->product->vendor_id !== Auth::user()->vendor->id){
+        if ($variant->product->vendor_id !== Auth::user()->vendor->id) {
             abort(404);
         }
         return view('vendor.product.product-variant.edit', compact('variant'));
@@ -91,7 +91,7 @@ class VendorProductVariantController extends Controller
 
         $varinat = ProductVariant::findOrFail($id);
         /** Check product vendor */
-        if($varinat->product->vendor_id !== Auth::user()->vendor->id){
+        if ($varinat->product->vendor_id !== Auth::user()->vendor->id) {
             abort(404);
         }
         $varinat->name = $request->name;
@@ -109,14 +109,14 @@ class VendorProductVariantController extends Controller
     public function destroy(string $id)
     {
         $varinat = ProductVariant::findOrFail($id);
-        
+
         /** Check product vendor */
-        if($varinat->product->vendor_id !== Auth::user()->vendor->id){
+        if ($varinat->product->vendor_id !== Auth::user()->vendor->id) {
             abort(404);
         }
 
         $variantItemCheck = ProductVariantItem::where('product_variant_id', $varinat->id)->count();
-        if($variantItemCheck > 0){
+        if ($variantItemCheck > 0) {
             return response(['status' => 'error', 'message' => 'This variant contain variant items in it delete the variant items first for delete this variant!']);
         }
         $varinat->delete();

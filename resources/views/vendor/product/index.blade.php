@@ -1,7 +1,7 @@
 @extends('vendor.layouts.master')
 
 @section('title')
- Product
+    Product
 @endsection
 
 @section('content')

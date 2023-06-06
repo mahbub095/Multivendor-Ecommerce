@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Auth;
 class VendorShopProfileController extends Controller
 {
     use ImageUploadTrait;
+
     /**
      * Display a listing of the resource.
      */
@@ -34,7 +35,7 @@ class VendorShopProfileController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'banner' => ['nullable','image', 'max:3000'],
+            'banner' => ['nullable', 'image', 'max:3000'],
             'shop_name' => ['required', 'max:200'],
             'phone' => ['required', 'max:50'],
             'email' => ['required', 'email', 'max:200'],

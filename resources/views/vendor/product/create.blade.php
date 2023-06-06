@@ -1,7 +1,7 @@
 @extends('vendor.layouts.master')
 
 @section('title')
-  Product
+    Product
 @endsection
 
 @section('content')
@@ -198,16 +198,16 @@
                     method: 'GET',
                     url: "{{route('vendor.product.get-child-categories')}}",
                     data: {
-                        id:id
+                        id: id
                     },
-                    success: function(data){
+                    success: function (data) {
                         $('.child-category').html('<option value="">Select</option>')
 
-                        $.each(data, function(i, item){
+                        $.each(data, function (i, item) {
                             $('.child-category').append(`<option value="${item.id}">${item.name}</option>`)
                         })
                     },
-                    error: function(xhr, status, error){
+                    error: function (xhr, status, error) {
                         console.log(error);
                     }
                 })

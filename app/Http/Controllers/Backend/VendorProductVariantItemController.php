@@ -49,7 +49,7 @@ class VendorProductVariantItemController extends Controller
         toastr('Created Successfully!', 'success', 'success');
 
         return redirect()->route('vendor.products-variant-item.index',
-        ['productId' => $request->product_id, 'variantId' => $request->variant_id]);
+            ['productId' => $request->product_id, 'variantId' => $request->variant_id]);
 
     }
 
@@ -78,7 +78,7 @@ class VendorProductVariantItemController extends Controller
         toastr('Update Successfully!', 'success', 'success');
 
         return redirect()->route('vendor.products-variant-item.index',
-        ['productId' => $variantItem->productVariant->product_id, 'variantId' => $variantItem->product_variant_id]);
+            ['productId' => $variantItem->productVariant->product_id, 'variantId' => $variantItem->product_variant_id]);
     }
 
     public function destroy(string $variantItemId)
