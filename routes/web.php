@@ -6,6 +6,7 @@ use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Backend\AdminController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Frontend\UserDashboardController;
+use App\Http\Controllers\Frontend\FlashSaleController;
 
 /*
 |--------------------------------------------------------------------------
@@ -38,3 +39,6 @@ Route::group(['middleware' => ['auth', 'verified'], 'prefix' => 'user', 'as' => 
     Route::put('profile', [UserProfileController::class, 'updateProfile'])->name('profile.update'); // user.profile.update
     Route::post('profile', [UserProfileController::class, 'updatePassword'])->name('profile.update.password');
 });
+
+//Flash sell
+Route::get('flash-sale', [FlashSaleController::class, 'index'])->name('flash-sale');
