@@ -44,7 +44,6 @@
         HEADER END
     ==============================-->
 
-
 <!--============================
     MAIN MENU START
 ==============================-->
@@ -52,7 +51,6 @@
 <!--============================
         MAIN MENU END
     ==============================-->
-
 
 <!--==========================
     POP UP START
@@ -111,7 +109,6 @@
     SCROLL BUTTON  END
 ==============================-->
 
-
 <!--jquery library js-->
 <script src="{{asset('frontend/js/jquery-3.6.0.min.js')}}"></script>
 <!--bootstrap js-->
@@ -151,7 +148,6 @@
 <!--classycountdown js-->
 <script src="{{asset('frontend/js/jquery.classycountdown.js')}}"></script>
 
-
 <!--main/custom js-->
 <script src="{{asset('frontend/js/main.js')}}"></script>
 
@@ -168,6 +164,7 @@
     })
 </script>
 
+@stack('scripts')
 </body>
 
 </html>
