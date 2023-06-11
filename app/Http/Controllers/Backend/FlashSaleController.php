@@ -20,18 +20,18 @@ class FlashSaleController extends Controller
 
     public function update(Request $request)
     {
-       $request->validate([
-        'end_date' => ['required']
-       ]);
+        $request->validate([
+            'end_date' => ['required']
+        ]);
 
-       FlashSale::updateOrCreate(
+        FlashSale::updateOrCreate(
             ['id' => 1],
             ['end_date' => $request->end_date]
-       );
+        );
 
-       toastr('Updated Successfully!', 'success', 'Success');
+        toastr('Updated Successfully!', 'success', 'Success');
 
-       return redirect()->back();
+        return redirect()->back();
 
     }
 
@@ -41,7 +41,7 @@ class FlashSaleController extends Controller
             'product' => ['required', 'unique:flash_sale_items,product_id'],
             'show_at_home' => ['required'],
             'status' => ['required'],
-        ],[
+        ], [
             'product.unique' => 'The product is already in flash sale!'
         ]);
 
