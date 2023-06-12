@@ -48,7 +48,8 @@
                     </li>
                     <li class=""><a class="nav-link" href="{{ route('admin.seller-products.index') }}">Seller
                             Products</a></li>
-                    <li class=""><a class="nav-link" href="{{ route('admin.seller-pending-products.index') }}">Seller Pending Products</a></li>
+                    <li class=""><a class="nav-link" href="{{ route('admin.seller-pending-products.index') }}">Seller
+                            Pending Products</a></li>
 
                     <li class=""><a class="nav-link" href="">Product Reviews</a></li>
 
@@ -151,7 +152,7 @@
             <li><a class="" href=""><i class="fas fa-user"></i>
                     <span>Subscribers</span></a></li>
 
-            <li><a class="nav-link" href=""><i class="fas fa-wrench"></i>
+            <li><a class="nav-link" href="{{ route('admin.settings.index') }}"><i class="fas fa-wrench"></i>
                     <span>Settings</span></a></li>
 
         </ul>

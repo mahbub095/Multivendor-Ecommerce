@@ -4,10 +4,11 @@ use Illuminate\Support\Facades\Session;
 
 /** Set Sidebar item active */
 
-function setActive(array $route){
-    if(is_array($route)){
-        foreach($route as $r){
-            if(request()->routeIs($r)){
+function setActive(array $route)
+{
+    if (is_array($route)) {
+        foreach ($route as $r) {
+            if (request()->routeIs($r)) {
                 return 'active';
             }
         }
@@ -16,10 +17,11 @@ function setActive(array $route){
 
 /** Check if product have discount */
 
-function checkDiscount($product) {
+function checkDiscount($product)
+{
     $currentDate = date('Y-m-d');
 
-    if($product->offer_price > 0 && $currentDate >= $product->offer_start_date && $currentDate <= $product->offer_end_date) {
+    if ($product->offer_price > 0 && $currentDate >= $product->offer_start_date && $currentDate <= $product->offer_end_date) {
         return true;
     }
 
@@ -28,7 +30,8 @@ function checkDiscount($product) {
 
 /** Calculate discount percent */
 
-function calculateDiscountPercent($originalPrice, $discountPrice) {
+function calculateDiscountPercent($originalPrice, $discountPrice)
+{
     $discountAmount = $originalPrice - $discountPrice;
     $discountPercent = ($discountAmount / $originalPrice) * 100;
 
@@ -59,4 +62,10 @@ function productType($type)
             return '';
             break;
     }
+
+}
+
+function limitText($text, $limit = 20)
+{
+    return \Str::limit($text, $limit);
 }
