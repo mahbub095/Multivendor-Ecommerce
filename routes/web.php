@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Frontend\FrontendProductController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\UserProfileController;
 use App\Http\Controllers\ProfileController;
@@ -42,3 +43,8 @@ Route::group(['middleware' => ['auth', 'verified'], 'prefix' => 'user', 'as' => 
 
 //Flash sell
 Route::get('flash-sale', [FlashSaleController::class, 'index'])->name('flash-sale');
+
+/** Product route */
+Route::get('products', [FrontendProductController::class, 'productsIndex'])->name('products.index');
+Route::get('product-detail/{slug}', [FrontendProductController::class, 'showProduct'])->name('product-detail');
+Route::get('change-product-list-view', [FrontendProductController::class, 'chageListView'])->name('change-product-list-view');
