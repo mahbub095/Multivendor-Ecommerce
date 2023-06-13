@@ -85,7 +85,8 @@
                 <ul class="dropdown-menu">
                     <li class=""><a class="nav-link" href="{{ route('admin.flash-sale.index') }}">Flash Sale</a></li>
                     <li class=""><a class="nav-link" href="{{ route('admin.coupons.index') }}">Coupons</a></li>
-                    <li class=""><a class="nav-link" href="">Shipping Rule</a></li>
+                    <li class=""><a class="nav-link" href="{{ route('admin.shipping-rule.index') }}">Shipping Rule</a>
+                    </li>
                     <li class=""><a class="nav-link" href="{{ route('admin.vendor-profile.index') }}">Vendor Profile</a>
                     </li>
                     <li class=""><a class="nav-link" href="">Payment Settings</a></li>
