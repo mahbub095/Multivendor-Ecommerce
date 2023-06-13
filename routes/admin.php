@@ -15,6 +15,7 @@ use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\ProductVariantController;
 use App\Http\Controllers\Backend\ProductVariantItemController;
 use App\Http\Controllers\Backend\FlashSaleController;
+use App\Http\Controllers\Backend\CouponController;
 use Illuminate\Support\Facades\Route;
 
 //Admin Route
@@ -93,3 +94,6 @@ Route::put('generale-setting-update', [SettingController::class, 'generalSetting
 Route::put('email-setting-update', [SettingController::class, 'emailConfigSettingUpdate'])->name('email-setting-update');
 Route::put('logo-setting-update', [SettingController::class, 'logoSettingUpdate'])->name('logo-setting-update');
 
+/** Coupon Routes */
+Route::put('coupons/change-status', [CouponController::class, 'changeStatus'])->name('coupons.change-status');
+Route::resource('coupons', CouponController::class);
