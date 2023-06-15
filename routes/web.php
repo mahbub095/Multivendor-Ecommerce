@@ -10,6 +10,7 @@ use App\Http\Controllers\Frontend\UserDashboardController;
 use App\Http\Controllers\Frontend\FlashSaleController;
 use App\Http\Controllers\Frontend\UserAddressController;
 use App\Http\Controllers\Frontend\CartController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -56,3 +57,4 @@ Route::get('change-product-list-view', [FrontendProductController::class, 'chage
 
 /** Cart routes */
 Route::post('add-to-cart', [CartController::class, 'addToCart'])->name('add-to-cart');
+Route::get('cart-details', [CartController::class, 'cartDetails'])->name('cart-details');

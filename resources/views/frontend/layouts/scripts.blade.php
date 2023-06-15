@@ -6,23 +6,11 @@
             }
         });
 
-        function getCartCount() {
-            $.ajax({
-                method: 'GET',
-                url: "{{ route('cart-count') }}",
-                success: function (data) {
-                    $('#cart-count').text(data);
-                },
-                error: function (data) {
-
-                }
-            })
-        }
 
         function fetchSidebarCartProducts() {
             $.ajax({
                 method: 'GET',
-                url: "{{ route('cart-products') }}",
+                url: " ",
                 success: function (data) {
                     console.log(data);
                     $('.mini_cart_wrapper').html("");
@@ -62,7 +50,7 @@
             let rowId = $(this).data('id');
             $.ajax({
                 method: 'POST',
-                url: "{{ route('cart.remove-sidebar-product') }}",
+                url: " ",
                 data: {
                     rowId: rowId
                 },
@@ -89,7 +77,7 @@
         function getSidebarCartSubtoal() {
             $.ajax({
                 method: 'GET',
-                url: "{{ route('cart.sidebar-product-total') }}",
+                url: " ",
                 success: function (data) {
                     $('#mini_cart_subtotal').text("{{ $settings->currency_icon }}" + data);
                 },
@@ -106,7 +94,7 @@
 
             $.ajax({
                 method: 'GET',
-                url: "{{route('user.wishlist.store')}}",
+                url: " ",
                 data: {id: id},
                 success: function (data) {
                     if (data.status === 'success') {
@@ -129,7 +117,7 @@
 
             $.ajax({
                 method: 'POST',
-                url: "{{route('newsletter-request')}}",
+                url: " ",
                 data: data,
                 beforeSend: function () {
                     $('.subscribe_btn').text('Loading...');
