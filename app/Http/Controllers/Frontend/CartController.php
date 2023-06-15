@@ -15,7 +15,6 @@ class CartController extends Controller
 {
 
 
-
     /** Add item to cart */
     public function addToCart(Request $request)
     {
@@ -23,17 +22,17 @@ class CartController extends Controller
         $product = Product::findOrFail($request->product_id);
 
         // check product quantity
-        if($product->qty === 0){
+        if ($product->qty === 0) {
             return response(['status' => 'error', 'message' => 'Product stock out']);
-        }elseif($product->qty < $request->qty){
+        } elseif ($product->qty < $request->qty) {
             return response(['status' => 'error', 'message' => 'Quantity not available in our stock']);
         }
 
         $variants = [];
         $variantTotalAmount = 0;
 
-        if($request->has('variants_items')){
-            foreach($request->variants_items as $item_id){
+        if ($request->has('variants_items')) {
+            foreach ($request->variants_items as $item_id) {
                 $variantItem = ProductVariantItem::find($item_id);
                 $variants[$variantItem->productVariant->name]['name'] = $variantItem->name;
                 $variants[$variantItem->productVariant->name]['price'] = $variantItem->price;
@@ -45,9 +44,9 @@ class CartController extends Controller
         /** check discount */
         $productPrice = 0;
 
-        if(checkDiscount($product)){
+        if (checkDiscount($product)) {
             $productPrice = $product->offer_price;
-        }else {
+        } else {
             $productPrice = $product->price;
         }
 
