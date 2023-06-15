@@ -52,12 +52,19 @@
                                 <p class="wsus__price">{{$settings->currency_icon}}{{$product->price}}</p>
                             @endif
                             <form class="shopping-cart-form">
-                                <input type="hidden" name="product_id" value=" ">
-                                <select class="d-none" name="variants_items[]">
-                                    <option value=" "></option>
-                                </select>
-                                <input class="" name="qty" type="hidden" min="1" max="100"
-                                       value="1"/>
+                                <input type="hidden" name="product_id" value="{{$product->id}}">
+                                @foreach ($product->variants as $variant)
+                                @if ($variant->status != 0)
+                                    <select class="d-none" name="variants_items[]">
+                                        @foreach ($variant->productVariantItems as $variantItem)
+                                            @if ($variantItem->status != 0)
+                                                <option value="{{$variantItem->id}}" {{$variantItem->is_default == 1 ? 'selected' : ''}}>{{$variantItem->name}} (${{$variantItem->price}})</option>
+                                            @endif
+                                        @endforeach
+                                    </select>
+                                @endif
+                                @endforeach
+                                <input class="" name="qty" type="hidden" min="1" max="100" value="1" />
                                 <button class="add_cart" type="submit">add to cart</button>
                             </form>
                         </div>
@@ -162,9 +169,8 @@
                                             </button>
                                         </li>
 
-                                        <li><a href="" class="add_to_wishlist" data-id=""><i
-                                                    class="fal fa-heart"></i></a></li>
-                                        {{-- <li><a href="#"><i class="far fa-random"></i></a></li> --}}
+                                        <li><a href="" class="add_to_wishlist" data-id="{{$product->id}}"><i class="fal fa-heart"></i></a></li>
+                                        <li><a href="#"><i class="far fa-random"></i></a></li>
                                     </ul>
                                 </form>
 

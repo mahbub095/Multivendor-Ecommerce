@@ -241,21 +241,18 @@
                                     <div class="row">
                                         <input type="hidden" name="product_id" value="{{$product->id}}">
                                         @foreach ($product->variants as $variant)
-                                            @if ($variant->status != 0)
-                                                <div class="col-xl-6 col-sm-6">
-                                                    <h5 class="mb-2">{{$variant->name}}: </h5>
-                                                    <select class="select_2" name="variants_items[]">
-                                                        @foreach ($variant->productVariantItems as $variantItem)
-                                                            @if ($variantItem->status != 0)
-                                                                <option
-                                                                    value="{{$variantItem->id}}" {{$variantItem->is_default == 1 ? 'selected' : ''}}>{{$variantItem->name}}
-                                                                    (${{$variantItem->price}})
-                                                                </option>
-                                                            @endif
-                                                        @endforeach
-                                                    </select>
-                                                </div>
-                                            @endif
+                                        @if ($variant->status != 0)
+                                            <div class="col-xl-6 col-sm-6">
+                                                <h5 class="mb-2">{{$variant->name}}: </h5>
+                                                <select class="select_2" name="variants_items[]">
+                                                    @foreach ($variant->productVariantItems as $variantItem)
+                                                        @if ($variantItem->status != 0)
+                                                            <option value="{{$variantItem->id}}" {{$variantItem->is_default == 1 ? 'selected' : ''}}>{{$variantItem->name}} (${{$variantItem->price}})</option>
+                                                        @endif
+                                                    @endforeach
+                                                </select>
+                                            </div>
+                                        @endif
                                         @endforeach
 
                                     </div>
@@ -264,23 +261,25 @@
                                 <div class="wsus__quentity">
                                     <h5>quentity :</h5>
                                     <div class="select_number">
-                                        <input class="number_area" name="qty" type="text" min="1" max="100" value="1"/>
+                                        <input class="number_area" name="qty" type="text" min="1" max="100" value="1" />
                                     </div>
+
                                 </div>
 
                                 <ul class="wsus__button_area">
-                                    <li>
-                                        <button type="submit" class="add_cart" href="#">add to cart</button>
-                                    </li>
+                                    <li><button type="submit" class="add_cart" href="#">add to cart</button></li>
+
+
                                     <li><a style="border: 1px solid gray;
                                         padding: 7px 11px;
-                                        border-radius: 100%;" href="javascript:;" class="add_to_wishlist"
-                                           data-id=" "><i class="fal fa-heart"></i></a></li>
+                                        border-radius: 100%;" href="javascript:;" class="add_to_wishlist" data-id="{{$product->id}}"><i class="fal fa-heart"></i></a></li>
+
                                 </ul>
                             </form>
-                            <p class="brand_model"><span>brand :</span></p>
+                            <p class="brand_model"><span>brand :</span> {{$product->brand->name}}</p>
                         </div>
                     </div>
+
                 </div>
             </div>
 

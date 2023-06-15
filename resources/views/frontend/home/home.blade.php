@@ -1,6 +1,6 @@
 @extends('frontend.layouts.master')
 @section('title')
-    e-Commerce HTML Template
+{{$settings->site_name}} || e-Commerce HTML Template
 @endsection
 
 @section('content')
@@ -90,7 +90,7 @@
     <!--============================
           HOME SERVICES START
         ==============================-->
-    {{-- @include('frontend.home.sections.services') --}}
+    @include('frontend.home.sections.services')
     <!--============================
         HOME SERVICES END
     ==============================-->
