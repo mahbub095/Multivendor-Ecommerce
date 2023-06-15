@@ -186,18 +186,14 @@
                                         </div>
 
                                         <ul class="wsus__button_area">
-                                            <li>
-                                                <button type="submit" class="add_cart" href="#">add to cart</button>
-                                            </li>
+                                            <li><button type="submit" class="add_cart" href="#">add to cart</button></li>
 
-                                            <li><a href="" class="add_to_wishlist" data-id="{{$product->id}}"><i
-                                                        class="fal fa-heart"></i></a></li>
-                                            {{-- <li><a href="#"><i class="far fa-random"></i></a></li> --}}
+                                            <li><a href="" class="add_to_wishlist" data-id="{{$product->id}}"><i class="fal fa-heart"></i></a></li>
+                                            <li><a href="#"><i class="far fa-random"></i></a></li>
                                         </ul>
                                     </form>
 
                                     <p class="brand_model"><span>brand :</span> {{$product->brand->name}}</p>
-
                                 </div>
                             </div>
                         </div>
