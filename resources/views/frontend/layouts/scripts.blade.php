@@ -34,7 +34,7 @@
         function getCartCount() {
             $.ajax({
                 method: 'GET',
-                url: " ",
+                url: " {{ route('cart-count') }}",
                 success: function(data) {
                     $('#cart-count').text(data);
                 },

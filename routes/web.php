@@ -58,3 +58,4 @@ Route::get('change-product-list-view', [FrontendProductController::class, 'chage
 /** Cart routes */
 Route::post('add-to-cart', [CartController::class, 'addToCart'])->name('add-to-cart');
 Route::get('cart-details', [CartController::class, 'cartDetails'])->name('cart-details');
+Route::get('cart-count', [CartController::class, 'getCartCount'])->name('cart-count');

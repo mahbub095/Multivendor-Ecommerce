@@ -81,4 +81,11 @@ class CartController extends Controller
         return response(['status' => 'success', 'message' => 'Added to cart successfully!']);
     }
 
+        /** Get cart count */
+        public function getCartCount()
+        {
+            return Cart::content()->count();
+        }
+
+
 }
