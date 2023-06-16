@@ -142,27 +142,27 @@
     <section id="wsus__single_banner">
         <div class="container">
             <div class="row">
-{{--                <div class="col-xl-6 col-lg-6">--}}
-{{--                    <div class="wsus__single_banner_content">--}}
-{{--                        @if ($cartpage_banner_section->banner_one->status == 1)--}}
-{{--                            <a href="{{$cartpage_banner_section->banner_one->banner_url}}">--}}
-{{--                                <img class="img-gluid"--}}
-{{--                                     src="{{asset($cartpage_banner_section->banner_one->banner_image)}}" alt="">--}}
-{{--                            </a>--}}
-{{--                        @endif--}}
-{{--                    </div>--}}
-{{--                </div>--}}
-{{--                <div class="col-xl-6 col-lg-6">--}}
-{{--                    <div class="wsus__single_banner_content single_banner_2">--}}
-{{--                        @if ($cartpage_banner_section->banner_two->status == 1)--}}
-{{--                            <a href="{{$cartpage_banner_section->banner_two->banner_url}}">--}}
-{{--                                <img class="img-gluid"--}}
-{{--                                     src="{{asset($cartpage_banner_section->banner_two->banner_image)}}" alt="">--}}
-{{--                            </a>--}}
-{{--                        @endif--}}
-{{--                    </div>--}}
-                </div>
+                {{--                <div class="col-xl-6 col-lg-6">--}}
+                {{--                    <div class="wsus__single_banner_content">--}}
+                {{--                        @if ($cartpage_banner_section->banner_one->status == 1)--}}
+                {{--                            <a href="{{$cartpage_banner_section->banner_one->banner_url}}">--}}
+                {{--                                <img class="img-gluid"--}}
+                {{--                                     src="{{asset($cartpage_banner_section->banner_one->banner_image)}}" alt="">--}}
+                {{--                            </a>--}}
+                {{--                        @endif--}}
+                {{--                    </div>--}}
+                {{--                </div>--}}
+                {{--                <div class="col-xl-6 col-lg-6">--}}
+                {{--                    <div class="wsus__single_banner_content single_banner_2">--}}
+                {{--                        @if ($cartpage_banner_section->banner_two->status == 1)--}}
+                {{--                            <a href="{{$cartpage_banner_section->banner_two->banner_url}}">--}}
+                {{--                                <img class="img-gluid"--}}
+                {{--                                     src="{{asset($cartpage_banner_section->banner_two->banner_image)}}" alt="">--}}
+                {{--                            </a>--}}
+                {{--                        @endif--}}
+                {{--                    </div>--}}
             </div>
+        </div>
         </div>
     </section>
     <!--============================
@@ -298,7 +298,6 @@
                 })
             }
 
-
             // applay coupon on cart
 
             $('#coupon_form').on('submit', function (e) {
@@ -306,7 +305,7 @@
                 let formData = $(this).serialize();
                 $.ajax({
                     method: 'GET',
-                    url: " ",
+                    url: "{{ route('apply-coupon') }}",
                     data: formData,
                     success: function (data) {
                         if (data.status === 'error') {
@@ -320,14 +319,13 @@
                         console.log(data);
                     }
                 })
-
             })
 
             // calculate discount amount
             function calculateCouponDescount() {
                 $.ajax({
                     method: 'GET',
-                    url: " ",
+                    url: "{{ route('coupon-calculation') }}",
                     success: function (data) {
                         if (data.status === 'success') {
                             $('#discount').text('{{$settings->currency_icon}}' + data.discount);
@@ -339,9 +337,6 @@
                     }
                 })
             }
-
-
         })
     </script>
 @endpush
-
