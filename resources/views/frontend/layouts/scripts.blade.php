@@ -1,17 +1,54 @@
 <script>
-    $(document).ready(function () {
+    $(document).ready(function() {
         $.ajaxSetup({
             headers: {
                 'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
             }
         });
 
+        // add product into cart
+        $('.shopping-cart-form').on('submit', function(e) {
+            e.preventDefault();
+            let formData = $(this).serialize();
+
+            $.ajax({
+                method: 'POST',
+                data: formData,
+                url: "{{ route('add-to-cart') }}",
+                success: function(data) {
+                    if(data.status === 'success'){
+                        getCartCount()
+                        fetchSidebarCartProducts()
+                        $('.mini_cart_actions').removeClass('d-none');
+                        toastr.success(data.message);
+                    }else if (data.status === 'error'){
+                        toastr.error(data.message);
+                    }
+                },
+                error: function(data) {
+
+                }
+            })
+        })
+
+        function getCartCount() {
+            $.ajax({
+                method: 'GET',
+                url: " ",
+                success: function(data) {
+                    $('#cart-count').text(data);
+                },
+                error: function(data) {
+
+                }
+            })
+        }
 
         function fetchSidebarCartProducts() {
             $.ajax({
                 method: 'GET',
                 url: " ",
-                success: function (data) {
+                success: function(data) {
                     console.log(data);
                     $('.mini_cart_wrapper').html("");
                     var html = '';
@@ -38,14 +75,14 @@
                     getSidebarCartSubtoal();
 
                 },
-                error: function (data) {
+                error: function(data) {
 
                 }
             })
         }
 
         // reomove product from sidebar cart
-        $('body').on('click', '.remove_sidebar_product', function (e) {
+        $('body').on('click', '.remove_sidebar_product', function(e) {
             e.preventDefault()
             let rowId = $(this).data('id');
             $.ajax({
@@ -54,7 +91,7 @@
                 data: {
                     rowId: rowId
                 },
-                success: function (data) {
+                success: function(data) {
                     let productId = '#mini_cart_' + rowId;
                     $(productId).remove()
 
@@ -67,7 +104,7 @@
                     }
                     toastr.success(data.message)
                 },
-                error: function (data) {
+                error: function(data) {
                     console.log(data);
                 }
             })
@@ -78,40 +115,40 @@
             $.ajax({
                 method: 'GET',
                 url: " ",
-                success: function (data) {
+                success: function(data) {
                     $('#mini_cart_subtotal').text("{{ $settings->currency_icon }}" + data);
                 },
-                error: function (data) {
+                error: function(data) {
 
                 }
             })
         }
 
         // add product to wishlist
-        $('.add_to_wishlist').on('click', function (e) {
+        $('.add_to_wishlist').on('click', function(e){
             e.preventDefault();
             let id = $(this).data('id');
 
             $.ajax({
                 method: 'GET',
                 url: " ",
-                data: {id: id},
-                success: function (data) {
-                    if (data.status === 'success') {
+                data: {id:id},
+                success:function(data){
+                    if(data.status === 'success'){
                         $('#wishlist_count').text(data.count)
                         toastr.success(data.message);
-                    } else if (data.status === 'error') {
+                    }else if(data.status === 'error'){
                         toastr.error(data.message);
                     }
                 },
-                error: function (data) {
+                error: function(data){
                     console.log(data);
                 }
             })
         })
 
         // newsletter
-        $('#newsletter').on('submit', function (e) {
+        $('#newsletter').on('submit', function(e){
             e.preventDefault();
             let data = $(this).serialize();
 
@@ -119,25 +156,25 @@
                 method: 'POST',
                 url: " ",
                 data: data,
-                beforeSend: function () {
+                beforeSend: function(){
                     $('.subscribe_btn').text('Loading...');
                 },
-                success: function (data) {
-                    if (data.status === 'success') {
+                success: function(data){
+                    if(data.status === 'success'){
                         $('.subscribe_btn').text('Subscribe');
                         $('.newsletter_email').val('');
                         toastr.success(data.message);
 
-                    } else if (data.status === 'error') {
+                    }else if(data.status === 'error'){
 
                         $('.subscribe_btn').text('Subscribe');
                         toastr.error(data.message);
                     }
                 },
-                error: function (data) {
+                error: function(data){
                     let errors = data.responseJSON.errors;
-                    if (errors) {
-                        $.each(errors, function (key, value) {
+                    if(errors){
+                        $.each(errors, function(key, value){
                             toastr.error(value);
                         })
                     }

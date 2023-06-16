@@ -38,8 +38,8 @@
                         </span></a></li>
                         {{-- <li><a href="compare.html"><i class="fal fa-random"></i><span>03</span></a></li> --}}
                         <li><a class="wsus__cart_icon" href="#"><i
-                                    class="fal fa-shopping-bag"></i><span id="cart-count"> </span></a></li>
-                    </ul>
+                            class="fal fa-shopping-bag"></i><span id="cart-count">{{Cart::content()->count()}}</span></a></li>
+            </ul>
                 </div>
             </div>
         </div>
@@ -69,7 +69,7 @@
 
         </ul>
         <div class="mini_cart_actions ">
-            <h5>sub total <span id="mini_cart_subtotal"> </span></h5>
+            <h5>sub total <span id="mini_cart_subtotal">{{$settings->currency_icon}}{{getCartTotal()}} </span></h5>
             <div class="wsus__minicart_btn_area">
                 <a class="common_btn" href="{{route('cart-details')}} ">view cart</a>
                 <a class="common_btn" href=" ">checkout</a>
