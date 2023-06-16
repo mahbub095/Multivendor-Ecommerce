@@ -160,9 +160,10 @@
     ==============================-->
 @endsection
 
+
 @push('scripts')
     <script>
-        $(document).ready(function () {
+        $(document).ready(function(){
             $.ajaxSetup({
                 headers: {
                     'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -170,7 +171,7 @@
             });
 
             // incriment product quantity
-            $('.product-increment').on('click', function () {
+            $('.product-increment').on('click', function(){
                 let input = $(this).siblings('.product-qty');
                 let quantity = parseInt(input.val()) + 1;
                 let rowId = input.data('rowid');
@@ -183,33 +184,33 @@
                         rowId: rowId,
                         quantity: quantity
                     },
-                    success: function (data) {
-                        if (data.status === 'success') {
-                            let productId = '#' + rowId;
-                            let totalAmount = "{{$settings->currency_icon}}" + data.product_total
+                    success: function(data){
+                        if(data.status === 'success'){
+                            let productId = '#'+rowId;
+                            let totalAmount = "{{$settings->currency_icon}}"+data.product_total
                             $(productId).text(totalAmount)
 
                             renderCartSubTotal()
                             calculateCouponDescount()
 
                             toastr.success(data.message)
-                        } else if (data.status === 'error') {
+                        }else if (data.status === 'error'){
                             toastr.error(data.message)
                         }
                     },
-                    error: function (data) {
+                    error: function(data){
 
                     }
                 })
             })
 
             // decrement product quantity
-            $('.product-decrement').on('click', function () {
+            $('.product-decrement').on('click', function(){
                 let input = $(this).siblings('.product-qty');
                 let quantity = parseInt(input.val()) - 1;
                 let rowId = input.data('rowid');
 
-                if (quantity < 1) {
+                if(quantity < 1){
                     quantity = 1;
                 }
 
@@ -222,21 +223,21 @@
                         rowId: rowId,
                         quantity: quantity
                     },
-                    success: function (data) {
-                        if (data.status === 'success') {
-                            let productId = '#' + rowId;
-                            let totalAmount = "{{$settings->currency_icon}}" + data.product_total
+                    success: function(data){
+                        if(data.status === 'success'){
+                            let productId = '#'+rowId;
+                            let totalAmount = "{{$settings->currency_icon}}"+data.product_total
                             $(productId).text(totalAmount)
 
                             renderCartSubTotal()
                             calculateCouponDescount()
 
                             toastr.success(data.message)
-                        } else if (data.status === 'error') {
+                        }else if (data.status === 'error'){
                             toastr.error(data.message)
                         }
                     },
-                    error: function (data) {
+                    error: function(data){
 
                     }
                 })
@@ -244,7 +245,7 @@
             })
 
             // clear cart
-            $('.clear_cart').on('click', function (e) {
+            $('.clear_cart').on('click', function(e){
                 e.preventDefault();
                 Swal.fire({
                     title: 'Are you sure?',
@@ -260,12 +261,12 @@
                         $.ajax({
                             type: 'get',
                             url: " ",
-                            success: function (data) {
-                                if (data.status === 'success') {
+                            success: function(data){
+                                if(data.status === 'success'){
                                     window.location.reload();
                                 }
                             },
-                            error: function (xhr, status, error) {
+                            error: function(xhr, status, error){
                                 console.log(error);
                             }
                         })
@@ -274,14 +275,14 @@
             })
 
             // get subtotal of cart and put it on dom
-            function renderCartSubTotal() {
+            function renderCartSubTotal(){
                 $.ajax({
                     method: 'GET',
                     url: " ",
-                    success: function (data) {
-                        $('#sub_total').text("{{$settings->currency_icon}}" + data);
+                    success: function(data) {
+                        $('#sub_total').text("{{$settings->currency_icon}}"+data);
                     },
-                    error: function (data) {
+                    error: function(data) {
                         console.log(data);
                     }
                 })
@@ -289,22 +290,22 @@
 
             // applay coupon on cart
 
-            $('#coupon_form').on('submit', function (e) {
+            $('#coupon_form').on('submit', function(e){
                 e.preventDefault();
                 let formData = $(this).serialize();
                 $.ajax({
                     method: 'GET',
                     url: " ",
                     data: formData,
-                    success: function (data) {
-                        if (data.status === 'error') {
+                    success: function(data) {
+                        if(data.status === 'error'){
                             toastr.error(data.message)
-                        } else if (data.status === 'success') {
+                        }else if (data.status === 'success'){
                             calculateCouponDescount()
                             toastr.success(data.message)
                         }
                     },
-                    error: function (data) {
+                    error: function(data) {
                         console.log(data);
                     }
                 })
@@ -312,17 +313,17 @@
             })
 
             // calculate discount amount
-            function calculateCouponDescount() {
+            function calculateCouponDescount(){
                 $.ajax({
                     method: 'GET',
                     url: " ",
-                    success: function (data) {
-                        if (data.status === 'success') {
-                            $('#discount').text('{{$settings->currency_icon}}' + data.discount);
-                            $('#cart_total').text('{{$settings->currency_icon}}' + data.cart_total);
+                    success: function(data) {
+                        if(data.status === 'success'){
+                            $('#discount').text('{{$settings->currency_icon}}'+data.discount);
+                            $('#cart_total').text('{{$settings->currency_icon}}'+data.cart_total);
                         }
                     },
-                    error: function (data) {
+                    error: function(data) {
                         console.log(data);
                     }
                 })
@@ -332,3 +333,4 @@
         })
     </script>
 @endpush
+
