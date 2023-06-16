@@ -34,7 +34,7 @@
         function getCartCount() {
             $.ajax({
                 method: 'GET',
-                url: " {{ route('cart-count') }}",
+                url: "{{ route('cart-count') }}",
                 success: function(data) {
                     $('#cart-count').text(data);
                 },
@@ -47,7 +47,7 @@
         function fetchSidebarCartProducts() {
             $.ajax({
                 method: 'GET',
-                url: " ",
+                url: "{{ route('cart-products') }}",
                 success: function(data) {
                     console.log(data);
                     $('.mini_cart_wrapper').html("");
@@ -87,7 +87,7 @@
             let rowId = $(this).data('id');
             $.ajax({
                 method: 'POST',
-                url: " ",
+                url: "{{ route('cart.remove-sidebar-product') }}",
                 data: {
                     rowId: rowId
                 },
@@ -114,7 +114,7 @@
         function getSidebarCartSubtoal() {
             $.ajax({
                 method: 'GET',
-                url: " ",
+                url: "{{ route('cart.sidebar-product-total') }}",
                 success: function(data) {
                     $('#mini_cart_subtotal').text("{{ $settings->currency_icon }}" + data);
                 },
