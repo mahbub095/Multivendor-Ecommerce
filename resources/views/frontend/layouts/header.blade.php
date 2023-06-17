@@ -74,11 +74,11 @@
                 <li class="text-center">Cart Is Empty!</li>
             @endif
         </ul>
-        <div class="mini_cart_actions ">
-            <h5>sub total <span id="mini_cart_subtotal">{{$settings->currency_icon}}{{getCartTotal()}} </span></h5>
+        <div class="mini_cart_actions {{Cart::content()->count() === 0 ? 'd-none': ''}}">
+            <h5>sub total <span id="mini_cart_subtotal">{{$settings->currency_icon}}{{getCartTotal()}}</span></h5>
             <div class="wsus__minicart_btn_area">
-                <a class="common_btn" href="{{route('cart-details')}} ">view cart</a>
-                <a class="common_btn" href=" {{route('user.checkout')}">checkout</a>
+                <a class="common_btn" href="{{route('cart-details')}}">view cart</a>
+                <a class="common_btn" href="{{route('user.checkout')}}">checkout</a>
             </div>
         </div>
     </div>
