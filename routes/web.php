@@ -10,6 +10,8 @@ use App\Http\Controllers\Frontend\UserDashboardController;
 use App\Http\Controllers\Frontend\FlashSaleController;
 use App\Http\Controllers\Frontend\UserAddressController;
 use App\Http\Controllers\Frontend\CartController;
+use App\Http\Controllers\Frontend\UserOrderController;
+use App\Http\Controllers\Frontend\CheckOutController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,16 +37,7 @@ require __DIR__ . '/auth.php';
 
 Route::get('admin/login', [AdminController::class, 'login'])->name('admin.login');
 
-//User Route
-Route::group(['middleware' => ['auth', 'verified'], 'prefix' => 'user', 'as' => 'user.'], function () {
-    Route::get('dashboard', [UserDashboardController::class, 'index'])->name('dashboard');
-    Route::get('profile', [UserProfileController::class, 'index'])->name('profile'); // user.profile
-    Route::put('profile', [UserProfileController::class, 'updateProfile'])->name('profile.update'); // user.profile.update
-    Route::post('profile', [UserProfileController::class, 'updatePassword'])->name('profile.update.password');
 
-    /** User Address Route */
-    Route::resource('address', UserAddressController::class);
-});
 
 //Flash sell
 Route::get('flash-sale', [FlashSaleController::class, 'index'])->name('flash-sale');
@@ -68,3 +61,24 @@ Route::get('cart/sidebar-product-total', [CartController::class, 'cartTotal'])->
 
 Route::get('apply-coupon', [CartController::class, 'applyCoupon'])->name('apply-coupon');
 Route::get('coupon-calculation', [CartController::class, 'couponCalculation'])->name('coupon-calculation');
+
+
+//User Route
+Route::group(['middleware' => ['auth', 'verified'], 'prefix' => 'user', 'as' => 'user.'], function () {
+    Route::get('dashboard', [UserDashboardController::class, 'index'])->name('dashboard');
+    Route::get('profile', [UserProfileController::class, 'index'])->name('profile'); // user.profile
+    Route::put('profile', [UserProfileController::class, 'updateProfile'])->name('profile.update'); // user.profile.update
+    Route::post('profile', [UserProfileController::class, 'updatePassword'])->name('profile.update.password');
+
+    /** User Address Route */
+    Route::resource('address', UserAddressController::class);
+
+    /** Order Routes */
+    Route::get('orders', [UserOrderController::class, 'index'])->name('orders.index');
+    Route::get('orders/show/{id}', [UserOrderController::class, 'show'])->name('orders.show');
+
+    /** Checkout routes */
+    Route::get('checkout', [CheckOutController::class, 'index'])->name('checkout');
+    Route::post('checkout/address-create', [CheckOutController::class, 'createAddress'])->name('checkout.address.create');
+    Route::post('checkout/form-submit', [CheckOutController::class, 'checkOutFormSubmit'])->name('checkout.form-submit');
+});
