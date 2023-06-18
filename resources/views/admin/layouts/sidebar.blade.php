@@ -111,15 +111,21 @@
             <li><a class="nav-link " href=""><i class="fas fa-ad"></i>
                     <span>Advertisement</span></a></li>
 
-            <li class="dropdown ">
+            <li
+                class="dropdown {{ setActive(['admin.blog-category.*', 'admin.blog.*', 'admin.blog-comments.index']) }}">
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fab fa-blogger-b"></i> <span>Manage Blog</span></a>
                 <ul class="dropdown-menu">
 
-                    <li class=""><a class="nav-link" href="">Categories</a></li>
-                    <li class=""><a class="nav-link" href="">Blogs</a></li>
-                    <li class=""><a class="nav-link" href="">Blog Comments</a></li>
-                </ul>
-            </li>
+                    <li class="{{ setActive(['admin.blog-category.*']) }}"><a class="nav-link"
+                                                                              href="{{ route('admin.blog-category.index') }}">Categories</a>
+                    </li>
+                    <li class="{{ setActive(['admin.blog.*']) }}"><a class="nav-link"
+                                                                     href="{{ route('admin.blog.index') }}">Blogs</a>
+                    </li>
+                    <li class="{{ setActive(['admin.blog-comments.index']) }}"><a class="nav-link"
+                                                                                  href="{{ route('admin.blog-comments.index') }}">Blog
+                            Comments</a></li>
+                </
 
             <li class="menu-header">Settings & More</li>
 

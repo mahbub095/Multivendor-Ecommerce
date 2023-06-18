@@ -2,6 +2,9 @@
 
 use App\Http\Controllers\Backend\AdminController;
 use App\Http\Controllers\Backend\AdminVendorProfileController;
+use App\Http\Controllers\Backend\BlogCategoryController;
+use App\Http\Controllers\Backend\BlogCommentController;
+use App\Http\Controllers\Backend\BlogController;
 use App\Http\Controllers\Backend\BrandController;
 use App\Http\Controllers\backend\CategoryController;
 use App\Http\Controllers\Backend\ProductImageGalleryController;
@@ -109,7 +112,6 @@ Route::put('shipping-rule/change-status', [ShippingRuleController::class, 'chang
 Route::resource('shipping-rule', ShippingRuleController::class);
 
 
-
 Route::resource('footer-info', FooterInfoController::class);
 Route::put('footer-socials/change-status', [FooterSocialController::class, 'changeStatus'])->name('footer-socials.change-status');
 Route::resource('footer-socials', FooterSocialController::class);
@@ -121,3 +123,13 @@ Route::resource('footer-grid-two', FooterGridTwoController::class);
 Route::put('footer-grid-three/change-status', [FooterGridThreeController::class, 'changeStatus'])->name('footer-grid-three.change-status');
 Route::put('footer-grid-three/change-title', [FooterGridThreeController::class, 'changeTitle'])->name('footer-grid-three.change-title');
 Route::resource('footer-grid-three', FooterGridThreeController::class);
+
+
+/** Blog routes */
+Route::put('blog-category/status-change', [BlogCategoryController::class, 'changeStatus'])->name('blog-category.status-change');
+Route::resource('blog-category', BlogCategoryController::class);
+
+Route::put('blog/status-change', [BlogController::class, 'changeStatus'])->name('blog.status-change');
+Route::resource('blog', BlogController::class);
+Route::get('blog-comments', [BlogCommentController::class, 'index'])->name('blog-comments.index');
+Route::delete('blog-comments/{id}/destory', [BlogCommentController::class, 'destory'])->name('blog-comments.destory');
