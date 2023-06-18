@@ -131,7 +131,7 @@
 
             $.ajax({
                 method: 'GET',
-                url: " ",
+                url: "{{route('user.wishlist.store')}}",
                 data: {id: id},
                 success: function (data) {
                     if (data.status === 'success') {

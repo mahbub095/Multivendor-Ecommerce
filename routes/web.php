@@ -3,6 +3,7 @@
 use App\Http\Controllers\Frontend\FrontendProductController;
 use App\Http\Controllers\Frontend\HomeController;
 use App\Http\Controllers\Frontend\UserProfileController;
+use App\Http\Controllers\Frontend\WishlistController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Backend\AdminController;
 use Illuminate\Support\Facades\Route;
@@ -87,6 +88,10 @@ Route::group(['middleware' => ['auth', 'verified'], 'prefix' => 'user', 'as' => 
     Route::get('payment', [PaymentController::class, 'index'])->name('payment');
     Route::get('paypal/success', [PaymentController::class, 'paypalSuccess'])->name('paypal.success');
 
+    /** Wishlist routes */
+    Route::get('wishlist', [WishlistController::class, 'index'])->name('wishlist.index');
+    Route::get('wishlist/add-product', [WishlistController::class, 'addToWishlist'])->name('wishlist.store');
+    Route::get('wishlist/remove-product/{id}', [WishlistController::class, 'destory'])->name('wishlist.destory');
 
     /** Newsletter routes */
 
