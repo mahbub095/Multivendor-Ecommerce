@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Providers;
+
 use App\Models\GeneralSetting;
 use App\Models\LogoSetting;
 use Illuminate\Support\Facades\Config;
@@ -29,10 +30,10 @@ class AppServiceProvider extends ServiceProvider
         $logoSetting = LogoSetting::first();
 
         /** set time zone */
-//        Config::set('app.timezone', $generalSetting->time_zone);
+        Config::set('app.timezone', $generalSetting->time_zone);
 
         /** Share variable at all view */
-        View::composer('*', function($view) use ($generalSetting, $logoSetting){
+        View::composer('*', function ($view) use ($generalSetting, $logoSetting) {
             $view->with(['settings' => $generalSetting, 'logoSetting' => $logoSetting]);
         });
     }

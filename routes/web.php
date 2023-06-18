@@ -13,7 +13,7 @@ use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\UserOrderController;
 use App\Http\Controllers\Frontend\CheckOutController;
 use App\Http\Controllers\Frontend\PaymentController;
-
+use App\Http\Controllers\Frontend\NewsletterController;
 
 /*
 |--------------------------------------------------------------------------
@@ -86,4 +86,10 @@ Route::group(['middleware' => ['auth', 'verified'], 'prefix' => 'user', 'as' => 
     /** Payment Routes */
     Route::get('payment', [PaymentController::class, 'index'])->name('payment');
     Route::get('paypal/success', [PaymentController::class, 'paypalSuccess'])->name('paypal.success');
+
+
+    /** Newsletter routes */
+
+    Route::post('newsletter-request', [NewsletterController::class, 'newsLetterRequset'])->name('newsletter-request');
+    Route::get('newsletter-verify/{token}', [NewsletterController::class, 'newsLetterEmailVarify'])->name('newsletter-verify');
 });
