@@ -108,7 +108,8 @@
                 </ul>
             </li>
 
-            <li><a class="nav-link " href=""><i class="fas fa-ad"></i>
+            <li><a class="nav-link {{ setActive(['admin.advertisement.*']) }}"
+                   href="{{ route('admin.advertisement.index') }}"><i class="fas fa-ad"></i>
                     <span>Advertisement</span></a></li>
 
             <li
