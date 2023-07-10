@@ -84,11 +84,7 @@
                                 </div>
                             </div>
 
-                            @include('frontend.pages.payment-gateway.stripe')
 
-                            @include('frontend.pages.payment-gateway.razorpay')
-
-                            @include('frontend.pages.payment-gateway.cod')
 
 
                         </div>
