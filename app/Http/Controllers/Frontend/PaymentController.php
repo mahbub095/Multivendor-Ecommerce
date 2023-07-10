@@ -109,7 +109,7 @@ class PaymentController extends Controller
             'live' => [
                 'client_id' => $paypalSetting->client_id,
                 'client_secret' => $paypalSetting->secret_key,
-                'app_id' => '',
+                'app_id' => 'APP-80W284485P519543T',
             ],
 
             'payment_action' => 'Sale',

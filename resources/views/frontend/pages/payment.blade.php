@@ -85,7 +85,7 @@
                             </div>
 
 
-
+                            @include('frontend.pages.payment-gateway.cod')
 
                         </div>
                     </div>

@@ -24,6 +24,7 @@ use App\Http\Controllers\Backend\ProductVariantItemController;
 use App\Http\Controllers\Backend\FlashSaleController;
 use App\Http\Controllers\Backend\CouponController;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Backend\CodSettingController;
 
 use App\Http\Controllers\Backend\FooterGridThreeController;
 use App\Http\Controllers\Backend\FooterGridTwoController;
