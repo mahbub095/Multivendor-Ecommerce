@@ -61,7 +61,8 @@
                 <a href="#" class="nav-link has-dropdown" data-toggle="dropdown"><i class="fas fa-cart-plus"></i>
                     <span>Orders</span></a>
                 <ul class="dropdown-menu">
-                    <li class=""><a class="nav-link" href="">All Orders</a></li>
+                    <li class="{{ setActive(['admin.order.*']) }}"><a class="nav-link"
+                    href="{{ route('admin.order.index') }}">All Orders</a></li>
                     <li class=""><a class="nav-link" href="">All Pending Orders</a></li>
                     <li class=""><a class="nav-link" href="">All processed Orders</a></li>
                     <li class=""><a class="nav-link" href="">All Dropped Off Orders</a></li>
