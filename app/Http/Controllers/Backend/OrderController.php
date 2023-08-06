@@ -24,40 +24,40 @@ class OrderController extends Controller
         return $dataTable->render('admin.order.index');
     }
 
-    // public function pendingOrders(PendingOrderDataTable $dataTable)
-    // {
-    //     return $dataTable->render('admin.order.pending-order');
-    // }
+    public function pendingOrders(PendingOrderDataTable $dataTable)
+    {
+        return $dataTable->render('admin.order.pending-order');
+    }
 
-    // public function processedOrders(processedOrderDataTable $dataTable)
-    // {
-    //     return $dataTable->render('admin.order.pending-order');
-    // }
+    public function processedOrders(processedOrderDataTable $dataTable)
+    {
+        return $dataTable->render('admin.order.pending-order');
+    }
 
-    // public function droppedOfOrders(droppedOffOrderDataTable $dataTable)
-    // {
-    //     return $dataTable->render('admin.order.dropped-off-order');
-    // }
+    public function droppedOfOrders(droppedOffOrderDataTable $dataTable)
+    {
+        return $dataTable->render('admin.order.dropped-off-order');
+    }
 
-    // public function shippedOrders(shippedOrderDataTable $dataTable)
-    // {
-    //     return $dataTable->render('admin.order.shipped-order');
-    // }
+    public function shippedOrders(shippedOrderDataTable $dataTable)
+    {
+        return $dataTable->render('admin.order.shipped-order');
+    }
 
-    // public function outForDeliveryOrders(outForDeliveryOrderDataTable $dataTable)
-    // {
-    //     return $dataTable->render('admin.order.out-for-delivery-order');
-    // }
+    public function outForDeliveryOrders(outForDeliveryOrderDataTable $dataTable)
+    {
+        return $dataTable->render('admin.order.out-for-delivery-order');
+    }
 
-    // public function deliveredOrders(deliveredOrderDataTable $dataTable)
-    // {
-    //     return $dataTable->render('admin.order.delivered-order');
-    // }
+    public function deliveredOrders(deliveredOrderDataTable $dataTable)
+    {
+        return $dataTable->render('admin.order.delivered-order');
+    }
 
-    // public function canceledOrders(canceledOrderDataTable $dataTable)
-    // {
-    //     return $dataTable->render('admin.order.canceled-order');
-    // }
+    public function canceledOrders(canceledOrderDataTable $dataTable)
+    {
+        return $dataTable->render('admin.order.canceled-order');
+    }
 
     /**
      * Display the specified resource.

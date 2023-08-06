@@ -11,7 +11,7 @@
     <title>
         @yield('title')
     </title>
-    <link rel="icon" type="image/png" href=" ">
+    <link rel="icon" type="image/png" href="{{asset($logoSetting->favicon)}}">
     <link rel="stylesheet" href="{{asset('frontend/css/all.min.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/css/bootstrap.min.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/css/select2.min.css')}}">
@@ -29,9 +29,9 @@
 
     <link rel="stylesheet" href="{{asset('frontend/css/style.css')}}">
     <link rel="stylesheet" href="{{asset('frontend/css/responsive.css')}}">
-
-    <!-- <link rel="stylesheet" href="{{asset('frontend/css/rtl.css')}}"> -->
-
+    @if($settings->layout === 'RTL')
+        <link rel="stylesheet" href="{{asset('frontend/css/rtl.css')}}">
+    @endif
 </head>
 
 <body>
@@ -44,6 +44,7 @@
         HEADER END
     ==============================-->
 
+
 <!--============================
     MAIN MENU START
 ==============================-->
@@ -51,6 +52,7 @@
 <!--============================
         MAIN MENU END
     ==============================-->
+
 
 <!--==========================
     POP UP START
@@ -109,6 +111,7 @@
     SCROLL BUTTON  END
 ==============================-->
 
+
 <!--jquery library js-->
 <script src="{{asset('frontend/js/jquery-3.6.0.min.js')}}"></script>
 <!--bootstrap js-->
@@ -147,6 +150,7 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 <!--classycountdown js-->
 <script src="{{asset('frontend/js/jquery.classycountdown.js')}}"></script>
+
 
 <!--main/custom js-->
 <script src="{{asset('frontend/js/main.js')}}"></script>

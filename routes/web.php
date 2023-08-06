@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Frontend\FrontendProductController;
 use App\Http\Controllers\Frontend\HomeController;
+use App\Http\Controllers\Frontend\ReviewController;
 use App\Http\Controllers\Frontend\UserProfileController;
 use App\Http\Controllers\Frontend\WishlistController;
 use App\Http\Controllers\ProfileController;
@@ -13,8 +14,9 @@ use App\Http\Controllers\Frontend\UserAddressController;
 use App\Http\Controllers\Frontend\CartController;
 use App\Http\Controllers\Frontend\UserOrderController;
 use App\Http\Controllers\Frontend\CheckOutController;
-use App\Http\Controllers\Frontend\PaymentController;
 use App\Http\Controllers\Frontend\NewsletterController;
+use App\Http\Controllers\Frontend\PaymentController;
+use App\Http\Controllers\Frontend\BlogController;
 
 /*
 |--------------------------------------------------------------------------
@@ -64,6 +66,10 @@ Route::get('cart/sidebar-product-total', [CartController::class, 'cartTotal'])->
 Route::get('apply-coupon', [CartController::class, 'applyCoupon'])->name('apply-coupon');
 Route::get('coupon-calculation', [CartController::class, 'couponCalculation'])->name('coupon-calculation');
 
+/** blog routes */
+Route::get('blog-details/{slug}', [BlogController::class, 'blogDetails'])->name('blog-details');
+Route::get('blog', [BlogController::class, 'blog'])->name('blog');
+
 
 //User Route
 Route::group(['middleware' => ['auth', 'verified'], 'prefix' => 'user', 'as' => 'user.'], function () {
@@ -74,6 +80,16 @@ Route::group(['middleware' => ['auth', 'verified'], 'prefix' => 'user', 'as' => 
 
     /** User Address Route */
     Route::resource('address', UserAddressController::class);
+
+    Route::get('reviews', [ReviewController::class, 'index'])->name('review.index');
+
+    /** blog comment routes */
+    Route::post('blog-comment', [BlogController::class, 'comment'])->name('blog-comment');
+
+
+    /** product review routes */
+    Route::post('review', [ReviewController::class, 'create'])->name('review.create');
+
 
     /** Order Routes */
     Route::get('orders', [UserOrderController::class, 'index'])->name('orders.index');
