@@ -42,7 +42,7 @@
                         </ul>
                         <div class="wsus__product_details">
                             <a class="wsus__category" href="#">{{$product->category->name}} </a>
-                            <p class="wsus__pro_rating">
+                            {{-- <p class="wsus__pro_rating">
                                 @php
                                 $avgRating = $product->reviews()->avg('rating');
                                 $fullRating = round($avgRating);
@@ -57,7 +57,7 @@
                                 @endfor
 
                                 <span>({{count($product->reviews)}} review)</span>
-                            </p>
+                            </p> --}}
                             <a class="wsus__pro_name" href="{{route('product-detail', $product->slug)}}">{{limitText($product->name, 52)}}</a>
                             @if(checkDiscount($product))
                                 <p class="wsus__price">{{$settings->currency_icon}}{{$product->offer_price}} <del>{{$settings->currency_icon}}{{$product->price}}</del></p>
@@ -187,7 +187,7 @@
                                     <h4>{{$settings->currency_icon}}{{$product->price}}</h4>
                                 @endif
                                 <p class="review">
-                                    @php
+                                    {{-- @php
                                         $avgRating = $product->reviews()->avg('rating');
                                         $fullRating = round($avgRating);
                                     @endphp
@@ -200,7 +200,7 @@
                                         @endif
                                     @endfor
 
-                                    <span>({{count($product->reviews)}} review)</span>
+                                    <span>({{count($product->reviews)}} review)</span> --}}
                                 </p>
                                 <p class="description">{!! $product->short_description !!}</p>
 
